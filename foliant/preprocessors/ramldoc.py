@@ -92,7 +92,7 @@ class Preprocessor(BasePreprocessorExt):
 
         out_path = self._raml_tmp / f'raml{self._counter}.md'
         template_dir = options.get('template_dir')
-        cmd = f'{options['raml2html_path']} --theme {RAML2HTML_TEMPLATE} -o {out_path} {spec_path}'
+        cmd = f'{options["raml2html_path"]} --theme {RAML2HTML_TEMPLATE} -o {out_path} {spec_path}'
 
         if template_dir:
             cmd += f' --template-dir {template_dir}'

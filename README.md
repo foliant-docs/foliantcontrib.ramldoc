@@ -1,4 +1,4 @@
-![](https://img.shields.io/pypi/v/foliantcontrib.ramldoc.svg)
+[![](https://img.shields.io/pypi/v/foliantcontrib.ramldoc.svg)](https://pypi.org/project/foliantcontrib.ramldoc/)
 
 # RAML API Docs Generator for Foliant
 
