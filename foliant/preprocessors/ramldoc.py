@@ -3,25 +3,24 @@ Preprocessor for Foliant documentation authoring tool.
 Generates documentation from RAML spec file.
 '''
 
-import os
-import json
 import shutil
 
-from pathlib import Path, PosixPath
+from pathlib import Path
+from pathlib import PosixPath
+from subprocess import CalledProcessError
+from subprocess import PIPE
+from subprocess import STDOUT
+from subprocess import run
+from urllib.error import HTTPError
+from urllib.error import URLError
 from urllib.request import urlretrieve
-from urllib.error import HTTPError, URLError
-from distutils.dir_util import remove_tree
-from jinja2 import Environment, FileSystemLoader
-from pkg_resources import resource_filename
-from subprocess import run, PIPE, STDOUT, CalledProcessError
 
-from foliant.preprocessors.utils.preprocessor_ext import (BasePreprocessorExt,
-                                                          allow_fail)
-from foliant.preprocessors.utils.combined_options import (Options,
-                                                          CombinedOptions,
-                                                          validate_exists,
-                                                          validate_in,
-                                                          rel_path_convertor)
+from foliant.contrib.combined_options import CombinedOptions
+from foliant.contrib.combined_options import Options
+from foliant.contrib.combined_options import rel_path_convertor
+from foliant.contrib.combined_options import validate_exists
+from foliant.preprocessors.utils.preprocessor_ext import BasePreprocessorExt
+from foliant.preprocessors.utils.preprocessor_ext import allow_fail
 from foliant.utils import output
 
 RAML2HTML_TEMPLATE = 'raml2html-full-markdown-theme'
